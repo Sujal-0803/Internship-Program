@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1{
+            color: #333;
+        }
+
+        input{
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        button{
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: darkgreen;
+        }
+
+        #output{
+            background-color: white;
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            font-size: 24px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function findTax(){
+            let salary = Number(document.getElementById("salary").value);
+            let tax = 0;
+            switch(true){
+                case (salary > 0 && salary <= 500000):
+                    tax = salary * 0;
+                    break;
+
+                case (salary > 500000 && salary <= 1000000):
+                    tax = salary * 0.10;
+                    break;
+
+                case (salary > 1000000 && salary <= 1500000):
+                    tax = salary * 0.20;
+                    break;
+
+                case (salary > 1500000):
+                    tax = salary * 0.30;
+                    break;
+
+                default:
+                    tax = "Invalid Salary";
+            }
+            document.getElementById("output").innerHTML = "Tax Amount = " + tax;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Tax Calculator</h1>
+    <input type="text" id="salary" placeholder="Enter Salary">
+
+    <br>
+
+    <button onclick="findTax()">
+        Calculate Tax
+    </button>
+    <div id="output"></div>
+</body>
+
+</html>

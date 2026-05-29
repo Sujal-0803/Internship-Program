@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1{
+            color: #333;
+        }
+
+        input{
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover{
+            background-color: darkgreen;
+        }
+
+        #output{
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            font-size: 20px;
+            color: blue;
+            line-height: 35px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function showEvenNumbers(){
+            let number = document.getElementById("number").value;
+            let result = "";
+            for(let i = 1; i <= number; i++){
+                if(i % 2 === 0){
+                    result += i + " ";
+                }
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Display Even Numbers</h1>
+    <input type="number" id="number" placeholder="Enter a number">
+    <button onclick="showEvenNumbers()">
+        Show Even Numbers
+    </button>
+
+    <div id="output"></div>
+</body>
+
+</html>
